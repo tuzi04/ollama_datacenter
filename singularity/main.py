@@ -26,10 +26,10 @@ def restart_ollama(sp):
     if sp != -1:
         sp = subprocess.Popen(f"kill -9 {sp.pid}" , stdout=subprocess.PIPE, shell=True)
         time.sleep(20)
-    sp = subprocess.Popen(f"singularity exec --writable --nv --env OLLAMA_HOST=0.0.0.0:{sys.argv[2]},OLLAMA_LOAD_TIMEOUT=20m ~/ollama ollama serve 1>> /dev/null 2>&1 &" , shell=True) # sys.argv[2] is a port number which should not be currently used. ex) 8080
+    sp = subprocess.Popen(f"singularity exec --writable --nv --env OLLAMA_HOST=0.0.0.0:{sys.argv[2]},OLLAMA_LOAD_TIMEOUT=20m ~/ollama ollama serve 1>> /dev/null 2>&1 &" , shell=True)
     
     client = Client(
-        host=f'http://localhost:{sys.argv[2]}',
+        host=f'http://localhost:{sys.argv[2]}', # sys.argv[2] is a port number which should not be currently used. ex) 11434
     )
     return client, sp
 

@@ -36,52 +36,65 @@ You can choose models from official [**website**](https://ollama.com).
 ## Docker
 
 #### Pulling Image
+It pull the official docker image of ollama from the [**Docker Hub**](https://hub.docker.com/r/ollama/ollama).
 ```bash
 sh pull_image.sh
 ```
 
 #### Pulling Model
+It pulls a model(e.g. phi) using the container.
 ```bash
 sh pull_model.sh [MODEL] [PORT]
 ```
 
 #### Running Model
+It runs main.py using the ollama client.
+
+If you want to use more GPUs, you can change the option --device=nvidia.com/gpu=0 into --device=nvidia.com/gpu=all in main.py file.
 ```bash
 sh run.sh [MODEL] [PORT]
 ```
 
 ## Podman
-
+It pull the official docker image of ollama from the [**Docker Hub**](https://hub.docker.com/r/ollama/ollama).
 #### Pulling Image
 ```bash
 sh pull_image.sh 
 ```
 
 #### Pulling Model
+It pulls a model(e.g. phi) using the container.
 ```bash
 sh pull_model.sh [MODEL] [PORT]
 ```
 
 #### Running Model
+It runs main.py using the ollama client.
+
+If you want to use more GPUs, you can change the option --device=nvidia.com/gpu=0 into --device=nvidia.com/gpu=all in main.py file.
 ```bash
 sh run.sh [MODEL] [PORT]
 ```
 
 ## Singularity
+It pull the official docker image of ollama from the [**Docker Hub**](https://hub.docker.com/r/ollama/ollama) and build it into singularity image.
 
-
+A directory named ollama will be created in your $HOME directory as a singularity image.
 #### Pulling Image
 ```bash
 sh build.sh
 ```
 
 #### Pulling Model
+You can download models from ollama.com by using the following command. (e.g. phi)
 ```bash
 sh pull_model.sh [MODEL] and [PORT]
 ```
 
 #### Running Model
-You need to change [MODEL] and [PORT] in run.sh and [PARTITION], [QOS], [GPUS] and [JOBNAME] in sbatch.sh.
+It runs main.py using the ollama client.
+
+You need to change [MODEL] and [PORT] in run.sh and [PARTITION], [QOS], [GPUS] and [JOBNAME] in sbatch.sh manually.
 ```bash
 sh sbatch.sh
 ```

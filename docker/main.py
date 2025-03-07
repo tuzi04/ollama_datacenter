@@ -27,7 +27,7 @@ def restart_ollama():
     time.sleep(20)
     os.sytem(f"docker run --rm -d --init --security-opt=label=disable --mount=type=bind,src=.,dst=/mnt/workspace --device=nvidia.com/gpu=0 --hooks-dir=/usr/share/containers/oci/hooks.d/ -v ollama:/root/.ollama -p {sys.argv[2]}:11434 --name ollama ollama/ollama")
     client = Client(
-        host=f'http://localhost:{sys.argv[2]}',
+        host=f'http://localhost:{sys.argv[2]}', # sys.argv[2] is a port number which should not be currently used. ex) 11434
     )
     return client
 
