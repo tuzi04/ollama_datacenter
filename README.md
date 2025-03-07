@@ -1,4 +1,4 @@
-# How to run Ollama on Datacenter using docker, podman or singularity
+# How to run Ollama on Datacenter using Docker, Podman or Singularity
 ## Overview
 This library helps to use Ollama in your local computer or server using docker, podman or singularity.
 
