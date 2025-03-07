@@ -1,2 +1,2 @@
 #!/bin/bash
-python pull.py [MODEL] [PORT]
+python pull.py $1 $2

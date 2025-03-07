@@ -4,6 +4,7 @@ from tqdm import tqdm
 from ollama import Client
 import timeout_decorator
 from timeout_decorator.timeout_decorator import TimeoutError
+import time
 import subprocess
 
 # Generation using LLM with time constraint
@@ -47,7 +48,7 @@ for i in range(1000):
         client,sp = restart_ollama(sp)
         flag = False
     try:
-        response = call_LLM(clent, model, prompt)
+        response = call_LLM(client, model, prompt)
         print(f"{response.message.content}")
     except TimeoutError as error:
         print(f"TIME OUT")
