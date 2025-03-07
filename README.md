@@ -11,7 +11,7 @@ Pull this repository first and choose which container platform to use.
 Then, install the requirements on Anaconda using following commands.
 
 ```bash
-conda env create -n ollama python=3.10
+conda create -n ollama python=3.10
 conda activate ollama
 pip install -r requirements.txt
 ```
