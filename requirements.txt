@@ -1,0 +1,8 @@
+torch
+torchvision
+transformers
+datasets
+accelerate
+tqdm
+ollama
+timeout_decorator
